@@ -22,6 +22,16 @@ for test_case in range(1, T+1):
     # print(arr)
     # print(max(arr))
 
+
+    # # 이 방법으로 풀어도 됨 -> 더편하긴 할듯
+    # max_arr = 0
+    # max_idx = 0
+    # for i in range(len(arr)):
+    #     if arr[i] == max(arr):
+    #         max_idx = i
+    #         max_arr = arr[i]
+    # print(max_idx, max_arr)
+
     # arr을 뒤집어 제일 많은 수들 중 제일 큰 수를 찾음
     arr.reverse()
     # print(arr)
