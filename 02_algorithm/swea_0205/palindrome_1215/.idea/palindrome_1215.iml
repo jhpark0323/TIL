@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="PYTHON_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$" />
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="get_directions_1219" />
+    <orderEntry type="module" module-name="gns_1221" />
+    <orderEntry type="module" module-name="beginners_palindrome_1989" />
+    <orderEntry type="module" module-name="string_comparison_4864" />
+    <orderEntry type="module" module-name="palindrome_4861" />
+    <orderEntry type="module" module-name="Pascal_triangle_2005" />
+  </component>
+</module>
