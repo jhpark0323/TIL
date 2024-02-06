@@ -6,6 +6,15 @@ T = int(input())
 for test_case in range(1, T+1):
     ls = input()
 
+    # new_ls = []
+    # for i in ls:
+    #     new_idx = []
+    #     if "'" in i:
+    #         for j in i:
+    #             if j == "'":
+    #                 new_idx.append(i.index(j))
+    #     new_word =
+
     # print(ls)
     stack = []
     answer = 1
@@ -38,3 +47,5 @@ for test_case in range(1, T+1):
         answer = 0
 
     print(f'#{test_case} {answer}')
+
+# print("'", '"')
