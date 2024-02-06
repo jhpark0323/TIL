@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6898a13e-83ed-4beb-bc3e-ce88add6a3a8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bracket_test_4866/bracket_test_4866.py" beforeDir="false" afterPath="$PROJECT_DIR$/bracket_test_4866/bracket_test_4866.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../test_study/algorithm_week1_sort_selection/binary_search_myself.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../test_study/algorithm_week1_sort_selection/binary_search_myself.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../test_study/algorithm_week1_sort_selection/bubble_sort_myself.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../test_study/algorithm_week1_sort_selection/bubble_sort_myself.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../test_study/algorithm_week1_sort_selection/counting_sort_myself.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../test_study/algorithm_week1_sort_selection/counting_sort_myself.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../test_study/algorithm_week1_sort_selection/selection_sort_myself.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../test_study/algorithm_week1_sort_selection/selection_sort_myself.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,5 +74,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

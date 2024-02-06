@@ -6,36 +6,34 @@ T = int(input())
 for test_case in range(1, T+1):
     ls = input()
 
-    # new_ls = []
-    # for i in ls:
-    #     new_idx = []
-    #     if "'" in i:
-    #         for j in i:
-    #             if j == "'":
-    #                 new_idx.append(i.index(j))
-    #     new_word =
-
     # print(ls)
     stack = []
     answer = 1
     for i in ls:
+        # ', "가 들어왔을 때
         if i == "'" or i == '"':
-            pass
-            # 이부분 다시 해야함
+            # stack에 따옴표들이 안들어있을 때
+            if i not in stack:
+                # stack에 append
+                stack.append(i)
+            # stack에 들어있을 때
+            else:
+                while stack.pop() != i:
+                    continue
 
         # i가 (, {이면 stack에 append
-        if i in '({':
+        elif i in '({':
             stack.append(i)
         # i가 )이면 stack.pop으로 (가 나오는지 확인
         elif i == ')':
-            if stack.pop() == '(':
+            if (len(stack) > 0) and (stack.pop() == '('):
                 continue
             else:
                 answer = 0
                 break
         # i가 }이면 stack.pop으로 {가 나오는지 확인
         elif i == '}':
-            if stack.pop() == '{':
+            if (len(stack) > 0) and (stack.pop() == '{'):
                 continue
             else:
                 answer = 0
