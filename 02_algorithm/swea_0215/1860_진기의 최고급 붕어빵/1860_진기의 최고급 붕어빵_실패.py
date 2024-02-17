@@ -1,6 +1,10 @@
 import sys
 sys.stdin = open('input.txt')
 
+'''
+시간초과인듯
+'''
+
 T = int(input())
 
 for test_case in range(1, T+1):
@@ -12,6 +16,7 @@ for test_case in range(1, T+1):
     bungeo = 0
     time = 0
     people = 0
+    length = len(ls)
 
     while 1:
         # 반복문이 돌 때 마다 1초씩 증가
@@ -29,7 +34,7 @@ for test_case in range(1, T+1):
             break
 
         # 사람수가 ls의 길이와 같으면 모든 사람이 다온거임 성공!
-        elif people == len(ls):
+        elif people == length:
             answer = 'Possible'
             break
 
