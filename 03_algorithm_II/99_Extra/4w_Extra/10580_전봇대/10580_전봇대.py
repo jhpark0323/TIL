@@ -2,10 +2,6 @@ import sys
 sys.stdin = open('input.txt')
 
 T = int(input())
-'''
-재현아... 이 문제는 너무 어렵게 생각하지마...ㅎ
-그냥 다 비교해... 시간초과 안뜨더라,,,,하핳
-'''
 
 for test_case in range(1, T+1):
     # n개의 팽팽한 전선
