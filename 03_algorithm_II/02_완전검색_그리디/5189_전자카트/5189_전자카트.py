@@ -6,23 +6,27 @@ sys.stdin = open('sample_input.txt')
 이 때 i,i는 뽑지 않는다.
 '''
 
-def f(i, k, s):
+def f(now, s):
     global min_s
     # 다돌면 끝
-    if i == k:
+    if all(visited):
+        s += arr[now][0]
         if min_s > s:
             min_s = s
         return
 
-
+    elif s > min_s:
+        return
 
     else:
-        for j in range(i, k-1):
-
-            path[i], path[j] = path[j], path[i]
-            if i != path[i]:
-                f(i+1, k, s+arr[path[j]][path[j+1]])
-            path[i], path[j] = path[j], path[i]
+        # 본인 위치는 가지 않기 때문에 1부터 시작
+        for next in range(1, n):
+            # 다음 갈 위치가 본인과 다르고 방문하지 않았다면
+            if now != next and not visited[next]:
+                # 방문표시
+                visited[next] = True
+                f(next, s + arr[now][next])
+                visited[next] = False
 
 
 T = int(input())
@@ -34,22 +38,11 @@ for test_case in range(1, T+1):
 
     # 최솟값을 담을 변수
     min_s = float('inf')
-    # 조합을 만들 ls
-    path = [i for i in range(2, n+1)]
 
-    f(0, n, 0)
-    print(min_s)
+    # 방문한 곳 갱신용
+    visited = [False] * n
 
-
-# import sys
-# sys.stdin = open('sample_input.txt')
-#
-# # 현재 위치치
-# def searc(now, cnt):
-#
-#
-# T = int(input())
-#
-# for test_case in range(1, T+1):
-#     n = int(input())
-#     arr = [list(map(int, input().split())) for _ in range(n)]
+    # 시작은 0
+    visited[0] = True
+    f(0, 0)
+    print(f'#{test_case} {min_s}')
