@@ -12,5 +12,15 @@
     <mapping directory="$PROJECT_DIR$/04_web/0309/온라인실습/web_ws_4_a" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/04_web/0309/온라인실습/web_ws_4_b" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/04_web/0309/온라인실습/web_ws_4_c" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/05_django/0312/django_hw_1_2" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/05_django/0312/django_hw_1_4" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/05_django/0312/django_ws_1_1" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/05_django/0312/django_ws_1_2" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/05_django/0312/django_ws_1_3" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/05_django/0312/django_ws_1_4" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/05_django/0312/django_ws_1_5" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/05_django/0312/django_ws_1_a" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/05_django/0312/django_ws_1_b" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/05_django/0312/django_ws_1_c" vcs="Git" />
   </component>
 </project>
