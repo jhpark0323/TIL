@@ -1,0 +1,29 @@
+{% extends "base.html" %} {% block content %}
+<h1>점심메뉴 목록</h1>
+<ul>
+  {% for menu in lunch %} {% if forloop.first %}
+  <p>내가 제일 좋아하는</p>
+  {% endif %} {% if menu == '타코야끼' %}
+  <li>{{menu}}는 반찬</li>
+  {% else %}
+  <li>
+    <p>{{menu|length}}</p>
+    <p>{{menu}}</p>
+  </li>
+  {% endif %} {% endfor %}
+</ul>
+<hr />
+{% comment %} DTL -> 알고리즘 로직을 위한 것 아님!!! 데이터를 사용자에게 잘
+보여주기 위한 것 연산 -> +밖에 없음. -> 사용자에게 잘 보여주기 위한 것이기
+때문에 있는 것. {% endcomment %} {% for item in empty_list %}
+<li>{{ item }}</li>
+{% empty %}
+<li>아직 아무것도 생성되지 않았습니다.</li>
+{% endfor %} 
+  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod hic, odio sit dolorem iste qui, tenetur ex adipisci, rem autem facere vitae expedita! Totam sunt sed quam, cupiditate ipsa accusantium!</p>
+  {% lorem 1 b random %}
+
+  <hr>
+  {% now "DATE_FORMAT" %}
+  {% now "Y-m-d H:i" %}
+{% endblock content %}
