@@ -22,5 +22,15 @@
     <mapping directory="$PROJECT_DIR$/05_django/0312/django_ws_1_a" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/05_django/0312/django_ws_1_b" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/05_django/0312/django_ws_1_c" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/05_django/0314/온라인실습실/django_hw_3_2" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/05_django/0314/온라인실습실/django_hw_3_4" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/05_django/0314/온라인실습실/django_ws_3_1" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/05_django/0314/온라인실습실/django_ws_3_2" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/05_django/0314/온라인실습실/django_ws_3_3" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/05_django/0314/온라인실습실/django_ws_3_4" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/05_django/0314/온라인실습실/django_ws_3_5" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/05_django/0314/온라인실습실/django_ws_3_a" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/05_django/0314/온라인실습실/django_ws_3_b" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/05_django/0314/온라인실습실/django_ws_3_c" vcs="Git" />
   </component>
 </project>
