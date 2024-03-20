@@ -6,8 +6,8 @@ def make_set(x):
 
 # 1~6번까지의 노드가
 parent, rank = make_set(7)  # 0번 노드 안씀.
-print(parent)
-print(rank)
+# print(parent)
+# print(rank)
 
 def find_set(x):
     # 자기 자신을 부모로 하는 루트 노드를 찾을때까지 탐색
