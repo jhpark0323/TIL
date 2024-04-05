@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+
+
+<h1>문제1. 데이터 읽어오기</h1>
+<table border="1">
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+      </style>
+    <thead>
+        <tr>
+            <!-- 데이터프레임의 열 이름들을 테이블의 헤더로 표시합니다. -->
+            {% for column in df.columns %}
+                <th>{{ column }}</th>
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+        <!-- 데이터프레임의 각 행을 테이블의 각 행으로 표시합니다. -->
+        {% for index, row in df.iterrows %}
+            <tr>
+                {% for column, value in row.items %}
+                    <!-- 각 셀에 데이터프레임의 값을 표시합니다. -->
+                    <td>{{ value }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+
+{% endblock content %}
+
+
+
