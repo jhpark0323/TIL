@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>{{ profile_owner.username }}`s PROFILE PAGE</h1>
+  {% if request.user == profile_owner %}
+    <form action="{% url "accounts:logout" %}" method="POST">
+      {% csrf_token %}
+      <input type="submit" value="LOGOUT">
+    </form>
+  {% endif %}
+  <hr>
+  <!-- 나는 나를 팔로우 할 수 없음 -->
+  <!-- follow 기능은 profile view함수가 처리하지 않음. -->
+  <!-- request.user -> 요청 보낸 유저 (이 페이지 보여달라고 한 유저) -->
+  {% if profile_owner != request.user %}
+    <form action="{% url "accounts:follow" profile_owner.pk %}" method="POST">
+      {% csrf_token %}
+      <!-- 내가 이미 팔로우 하고 있는 유저라면 -->
+      <!-- 프로필 주인을 참조하고 있는 유저 목록에 내가 포함되어 있다면-->
+      {% comment %} {% if profile_owner in request.user.follwings.all %}{% endif %} {% endcomment %}
+      {% if request.user in profile_owner.followers.all %}
+        <input type="submit" value="팔로우 취소">
+      {% else %}
+        <input type="submit" value="팔로우">
+      {% endif %}
+    </form>
+  {% endif %}
+{% endblock content %}

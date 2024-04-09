@@ -37,13 +37,13 @@ VSCode
     -> BASE_URL -> http://localhost/articles/
    | 기능 | method | url | view 함수 (매개변수) | 제약 조건 |
    |---|---|---|---|---|
-   | 메인 페이지 | GET | '' | index | pk 기준 오름차순 정렬 |
+   | 메인 페이지 | GET | '' | index | pk 기준 내림차순 정렬 |
    | 게시글 생성 페이지 | GET | /create/ | create | 로그인 필요 |
    | 게시글 생성 기능 | POST | /create/ | create | 로그인 필요 |
    | 게시글 수정 페이지 | GET | /{ int: article_pk }/update/ | update (article_pk) | 로그인 필요, 작성자인 경우 |
    | 게시글 수정 기능 | POST |  /{ int: article_pk }/update/ | update (article_pk) | 로그인 필요, 작성자인 경우 |
    | 게시글 삭제 기능 | POST | /{int: article_pk }/delete/ | delete (article_pk) | 로그인 필요, 작성자인 경우 |
-   | 좋아요 버튼을 렌더링 할 페이지 | GET | '' / index | 로그인 필요할까?, 작성자가 아닌 경우 |
+   | 좋아요 버튼을 렌더링 할 페이지 | GET | '' | index | 로그인 필요할까?, 작성자가 아닌 경우 |
    | 좋아요 기능 | POST | /{int : article_pk>}/like/  | like (article_pk) | 로그인 필요할까?, 작성자가 아닌 경우 |
 
 
