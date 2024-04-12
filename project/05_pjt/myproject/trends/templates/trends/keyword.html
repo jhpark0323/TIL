@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>키워드 추가</h2>
+
+<form action="{% url "trends:keyword" %}" method="POST">
+  {% csrf_token %}
+  <div class="form-group">
+    {{ form.name.label_tag }}
+    {{ form.name }}
+    <input type="submit" value = '생성하기' ></input>
+  </div>
+</form>
+
+<hr>
+
+{% if keyword %}
+
+<h3>분석을 원하는 키워들 목록</h3>
+
+  {% for key in keyword %}
+
+  <p>{{key.pk}}번째 키워드 - {{key.name}}</p>
+  <form action="{% url "trends:delete" key.pk %}" method = 'POST'>
+    {% csrf_token %}
+
+    <input type="submit" value="삭제하기">
+  </form>
+  <hr>
+  {% endfor %}
+
+{% endif %}
+
+{% endblock content %}
