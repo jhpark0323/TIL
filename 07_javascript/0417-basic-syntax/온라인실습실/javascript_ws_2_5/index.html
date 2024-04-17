@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const citiesInfo = [
+      {
+        city: '서울',
+        utcOffset: ['한국 표준시', 'KST', 'UTC+9'],
+        latitude: 37,
+        longitude: 126
+      },
+      {
+        city: '도쿄',
+        utcOffset: ['일본 표준시', 'JST', 'UTC+9'],
+        latitude: 35,
+        longitude: 139
+      },
+      {
+        city: '상하이',
+        utcOffset: ['중국 표준시', 'CST', 'UTC+8'],
+        latitude: 31,
+        longitude: 121
+      }
+    ]
+
+    for (const cityInfo of citiesInfo) {
+      // console.log(cityInfo)
+      console.log(`수도 : ${cityInfo.city}`)
+      console.log(`utcOffset : ${cityInfo.utcOffset[2]}`)
+      console.log(`latitude : ${cityInfo.latitude}`)
+      console.log(`longitude : ${cityInfo.longitude}`)
+      console.log('')
+    }
+
+  </script>
+</body>
+</html>
