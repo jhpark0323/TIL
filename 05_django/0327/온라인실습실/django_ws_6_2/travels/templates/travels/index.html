@@ -3,5 +3,15 @@
 {% block content %}
 
 <h1>travels</h1>
+<a href="{% url "travels:create" %}">CREATE</a>
+<hr>
+{% for travel in travels %}
+<a href="{% url "travels:detail" travel.pk %}">
+  <p>location : {{ travel.location }}</p>
+  <p>plan : {{ travel.plan }}</p>
+</a>
+<hr>
+{% endfor %}
+
 
 {% endblock content %}
