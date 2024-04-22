@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <button id="btn">버튼</button>
+  <p>클릭횟수 : <span id="counter">0</span></p>
+
+  <script>
+    // 1. 버튼 선택
+    const btn = document.querySelector('#btn')
+    // console.log(btn)
+
+    // 3. 초기값 선언
+    let count = 0
+
+    // 2. 이번트 핸들러 부착
+    btn.addEventListener('click', function (event) {
+      // 3.1 초기값 1 증가
+      count += 1
+
+      // 2.1 카운트 할 요소 선택
+      const spanTag = document.querySelector('#counter')
+
+      // 2.2 카운트 될 요소 안에 증가된 숫자를 재할당
+      spanTag.textContent = count
+
+    })
+
+  </script>
+</body>
+
+</html>

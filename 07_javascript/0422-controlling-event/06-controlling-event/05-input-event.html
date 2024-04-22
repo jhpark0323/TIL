@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <input type="text" id="text-input">
+  <p></p>
+
+  <script>
+    // 1. input태그 선택
+    const inputTag = document.querySelector('#text-input')
+
+    // 3.2 p 태그 선택
+    const pTag = document.querySelector('p')
+
+    // 2. 콜백 함수 (input 태그에 input 이벤트가 발생될 때마다 실행되는 코드)
+    const inputHandler = function (event) {
+      // console.log(event)
+      // console.log(event.currentTarget.value)
+      console.log(this.value)
+
+      pTag.textContent = event.currentTarget.value
+    }
+
+
+    // 3. 선택한 input 태그에 이벤트 핸들러 부착
+    inputTag.addEventListener('input', inputHandler)
+
+
+  </script>
+</body>
+
+
+</html>
