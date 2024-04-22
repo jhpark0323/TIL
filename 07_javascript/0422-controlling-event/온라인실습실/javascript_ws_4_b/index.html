@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .font-crimson {
+      color: crimson;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 class="heading">Hover me!</h1>
+  <h2 class="sub-heading">Double Click me!</h2>
+  <p class="contents">Lorem ipsum dolor sit amet consectetur</p>
+
+  <script>
+    const randomTexts = [
+      'Lorem ipsum dolor sit amet consectetu',
+      'adipisicing elit. Repellendus delectus quam',
+      'similique quo ipsam maxime totam alias',
+      'quibusdam repudiandae voluptas dicta',
+      'voluptas voluptatibus exercitationem officiis'
+    ]
+
+    // 아래에 코드 작성
+    const h1Tag = document.querySelector('h1')
+    const h2Tag = document.querySelector('h2')
+    const pTag = document.querySelector('p')
+
+    h1Tag.addEventListener('mouseover', function (event) {
+      h1Tag.textContent = 'I am being hovered!'
+    })
+
+    h1Tag.addEventListener('mouseout', function (event) {
+      h1Tag.textContent = 'Hover me!'
+    })
+
+    h2Tag.addEventListener('dblclick', function (event) {
+      h2Tag.classList.toggle('font-crimson')
+    })
+
+    pTag.addEventListener('wheel', function (event) {
+      // Math.floor와 Math.random을 사용하여 배열에서 랜덤한 인덱스 선택
+      const randomIndex = Math.floor(Math.random() * randomTexts.length);
+      
+      // 선택된 랜덤 문자열을 p 요소의 텍스트로 설정
+      pTag.textContent = randomTexts[randomIndex];
+    })
+
+  </script>
+</body>
+
+</html>
