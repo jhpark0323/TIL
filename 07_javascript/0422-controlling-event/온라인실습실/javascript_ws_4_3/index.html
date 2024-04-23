@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Document</title>
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+<body>
+  
+  <div class="container">
+
+    <form id="form" class="my-3">
+      <div class="mb-3">
+        <input type="text" class="form-control" id="title">
+      </div>
+      <div class="mb-3">
+        <textarea class="form-control" id="content" rows="3"></textarea>
+      </div>
+      <div class="d-grid gap-2">
+        <button class="btn btn-primary">add</button>
+      </div>
+    </form>
+    
+    <section id="cardsSection" class="row">
+
+      <!-- 카드 예시 -->
+      <article class="col-4">
+        <div class="card m-1">
+          <div class="card-body">
+            <h5 class="card-title">Example</h5>
+            <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti placeat odit rerum asperiores beatae vitae doloremque consectetur magni delectus, fuga autem laudantium, quidem iusto voluptates non earum dolorem totam dolores.</p>
+          </div>  
+        </div>
+      </article>
+      <!-- 카드 예시 -->
+      
+    </section>
+
+  </div>
+
+  <script>
+    /* 
+      사용자가 form 에 title과 content를 입력하고 submit하면, 예시와 같은 카드를 생성하여 div#cardSection에 추가하는 코드를 작성하시오.
+      기능을 모두 구현하면 카드 예시 마크업은 주석처리 하거나 삭제한다.
+    */
+
+    const inputTag = document.querySelector('#title')
+    const textareaTag = document.querySelector('#content')
+    const btnDiv = document.querySelector('form')
+    const cardsSectionId = document.querySelector('#cardsSection')
+    
+    const article = document.createElement('article')
+    article.classList.add('col-4')
+      
+    const createCard = function (event) {
+      event.preventDefault()
+      const title = inputTag.value
+      const content = textareaTag.value
+
+      const div1 = document.createElement('div')
+      div1.classList.add('card', 'm-1')
+      const div2 = document.createElement('div')
+      div2.classList.add('card-body')
+      const h5Tag = document.createElement('h5')
+      h5Tag.classList.add('card-title')
+      h5Tag.textContent = title
+      const pTag = document.createElement('p')
+      pTag.classList.add('card-text')
+      pTag.textContent = content
+
+      div2.appendChild(h5Tag)
+      div2.appendChild(pTag)
+
+      div1.appendChild(div2)
+
+      article.appendChild(div1)
+
+      console.log(article)
+      return article
+    }
+
+    btnDiv.addEventListener('submit', createCard)
+    // console.log(article)
+    cardsSectionId.appendChild(article)
+
+
+  </script>
+</body>
+</html>

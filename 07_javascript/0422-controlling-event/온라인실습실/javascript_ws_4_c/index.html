@@ -35,12 +35,35 @@
     const textInput = document.querySelector('.text-input')
     // console.log(textInput)
     const pTag = document.querySelector('p')
+    const warningMessage = document.querySelector('.warning')
+    const colorInput = document.querySelector('.color-input')
 
     textInput.addEventListener('input', function (event) {
-      pTag.textContent = event.currentTarget.value
+      const text = event.currentTarget.value
+      pTag.textContent = text
+
+      if (text.length > 5) {
+        warningMessage.style.display = 'block'
+        pTag.textContent = ''
+        pTag.classList.remove('fs-2', 'bg-color')
+      } else {
+        warningMessage.style.display = 'none'
+      }
     })
 
+    textInput.addEventListener('focus', function (event) {
+      pTag.classList.add('fs-2', 'bg-color')
+    })
 
+    textInput.addEventListener('blur', function (event) {
+      pTag.classList.remove('fs-2', 'bg-color')
+    })
+
+    colorInput.addEventListener('input', function (event) {
+      // console.log(event)
+      // console.log(event.target.value)
+      pTag.style.color = event.target.value
+    })
 
 
 
