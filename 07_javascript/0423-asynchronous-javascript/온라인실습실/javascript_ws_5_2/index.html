@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    img {
+      height: 150px;
+    }
+  </style>
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <h1>Dog API</h1>
+  <img draggable="false" src="noResult.png" alt="dog">
+  <h2>아직 선택된 사진이 없습니다!</h2>
+  <br>
+  <button>Get dog</button>
+
+  
+  <script>
+    const URL = 'https://dog.ceo/api/breeds/image/random'
+		const imgTag = document.querySelector('img')
+		const h2Tag = document.querySelector('h2')
+		const btnTag = document.querySelector('button')
+
+    btnTag.addEventListener('click', function (event) {
+      axios ({
+        method: 'get',
+        url: URL
+      })
+        .then((response) => {
+          console.log(response.data.message)
+          imgTag.setAttribute('src', response.data.message)
+          h2Tag.textContent = ''
+        })
+    })
+
+
+  </script>
+</body>
+</html>

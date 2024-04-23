@@ -63,7 +63,7 @@
           const num = imgNum.length
           console.log(num)
 
-          console.log(response.data.photos[0]['earth_date'])
+          // console.log(response.data.photos[0]['earth_date'])
 
           if (num < 3) {
             if (response.data.photos.length === 0) {
@@ -73,9 +73,14 @@
               const imgElement = document.createElement('img')
               const pTag = document.createElement('p')
               imgElement.src = photo.img_src
-              pTag.textContent = response.data.photos[0]['earth_date']
-              photoContainer.appendChild(pTag)
+              if ('earth_date' in response.data.photos[0]) {
+
+                pTag.textContent = response.data.photos[0]['earth_date']
+                photoContainer.appendChild(pTag)
+              }
               photoContainer.appendChild(imgElement)
+              const hrTag = document.createElement('hr')
+              photoContainer.appendChild(hrTag)
             }
           }
         })
