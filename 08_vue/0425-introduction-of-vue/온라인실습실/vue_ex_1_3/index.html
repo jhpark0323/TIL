@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <h1>User Profile</h1>
+    <p>Name: {{ user.name }}</p>
+    <p>Age: {{ user.age }}</p>
+    <button v-on:click="changeName">Change Name</button>
+    <button v-on:click="changeAge">Change Age</button>
+  </div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script>
+    const { createApp, ref } = Vue
+
+    const app = createApp({
+      setup() {
+        const user = ref({
+          name: 'Alice',
+          age: 30
+        })
+
+        const changeName = function () {
+          let newName = prompt('Enter', user.value.name)
+          if (newName !== null) {
+            user.value.name = newName
+          }
+          // console.log(user.value.name)
+          // console.log(newName)
+        }
+
+        const changeAge = function () {
+          let newAgeString = prompt('Enter new age', user.value.age)
+          if (newAgeString !== null) {
+            let newAge = parseInt(newAgeString)
+            if (!isNaN(newAge)) {
+              user.value.age = newAge
+            } else {
+              alert('Please enter a valid age!')
+            }
+          }
+        }
+
+        return { 
+          user,
+          changeName,
+          changeAge,
+         }
+      }
+    })
+    app.mount('#app')
+  </script>
+</body>
+
+</html>

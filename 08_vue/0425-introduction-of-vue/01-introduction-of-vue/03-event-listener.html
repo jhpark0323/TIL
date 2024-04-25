@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <p>{{ count }}</p>
+    <p>{{ count }}</p>
+    <p>{{ count }}</p>
+    <p>{{ count }}</p>
+    <button v-on:click="increment">버튼!!!</button>
+
+    <h1>{{ object.id + 1 }}</h1>
+  </div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script>
+    // button을 선택
+    // button에 이벤트 리스터를 부착 (클릭 이벤트에 반응)
+      // p태그를 선택
+      // p태그의 컨텐츠를 변수에 저장
+      // 그 변수값을 1 증가
+    const { createApp, ref } = Vue
+
+    const app = createApp({
+      setup() {
+        const count = ref(0)
+        const increment = function () {
+          count.value++
+        }
+        const object = { id: ref(0) }
+        return {
+          count, 
+          increment,
+          object
+        }
+      }
+    })
+
+    app.mount('#app')
+  </script>
+</body>
+
+</html>
