@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .done {
+      text-decoration: line-through;
+    }
+
+    .detail {
+      position: fixed;
+      top: 30%;
+      left: 70%;
+      border: 1px solid black;
+      width: 300px;
+      background-color: white;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- template -->
+  <!-- id가 app일 필요는 없다 -->
+  <article id="app">
+    <!-- <p>{{ test }}</p> -->
+    <!-- todos를 반복해서 카드 하나하나를 만든다. -->
+    <!-- v-for 할 때 key하기 -->
+    <div 
+      v-for="todo in todos"
+      :key="todo.id"
+    >
+      <div class="card" @click="goDetail(todo)">
+        <p :class="{ done: todo.completed }">
+          {{ todo.title }}
+        </p>
+        <p>{{ todo.completed }}</p>
+        <hr>
+      </div>
+    </div>
+
+    <section 
+    v-if="todo"
+    class="detail"
+
+    >
+      <!--  종료 버튼 pk, title, completed, userid, comments -->
+      <button @click="closeDetail">x</button>
+      <h1>{{ todo.id }} | {{ todo.title }}</h1>
+      <p>userid : {{ todo.userid }}</p>
+      <p>isCompleted : {{ todo.completed }}</p>
+
+      <!-- 댓글 영역 -->
+      <div>
+        <p>댓글 본론</p>
+      </div>
+
+    </section>
+
+  </article>
+  
+
+  <!-- axios cdn -->
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+  <!-- Vue cdn -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+  <!-- Vue 객체 작성 -->
+  <script>
+    // 객체 구조 분해 할당으로
+    const { createApp, ref, onMounted } = Vue
+
+    const app = createApp({
+      setup() {
+        // 반응형 객체 -> 내부 요소가 변경 될 때, Vue가 변경사항을 파악하고,
+        // 바뀐 데이터에 맞춰서 화면을 재 렌더링
+        const todos = ref([
+          {
+            id: 1,
+            title: '첫번째 게시글',
+            completed: false
+          },
+          {
+            id: 2,
+            title: '두번째 게시글',
+            completed: true
+          }
+        ])
+
+        const todo = ref(false)
+
+        const goDetail = function (item) {
+          todo.value = item
+        }
+
+        const closeDetail = function () {
+          todo.value = false
+        }
+
+
+        onMounted(() => {
+          axios({
+            methods: 'get',
+            url: 'https://jsonplaceholder.typicode.com/todos',
+          })
+            .then(res => todos.value = res.data.slice(0, 100))
+            .catch(err => console.log(err))
+        })
+        
+        return{
+          // test: '잘 렌더링 되었냐',
+          todos, todo,
+          goDetail, closeDetail,
+        }
+      }
+    })
+
+    app.mount('#app')
+
+  </script>
+
+</body>
+</html>
