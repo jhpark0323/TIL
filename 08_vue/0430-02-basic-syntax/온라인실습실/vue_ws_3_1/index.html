@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <div id="app">
+    <h1>다양한 전시 정보</h1>
+    <ul v-for="exhibition in exhibitionInfo" :key="exhibition.name">
+      <li>
+        <h3>{{ exhibition.name }}</h3>
+        <p>{{ exhibition.place }}</p>
+        <p>가격 : {{ exhibition.price }}</p>
+        <hr>
+      </li>
+    </ul>
+  </div>
+
+  <script>
+    /*
+			1. 주어진 전시 정보를 객체에 담고, 모든 객체를 하나의 배열에 할당하시오.
+			2. 반복문을 활용하여 각 전시 정보를 화면에 렌더링하시오.
+				- key 값은 전시 이름으로 할당한다.
+      - 전시 정보
+            무라카미 다카시 : 무라카시좀비
+            부산 시립 미술관
+            1000
+
+            마우라치오 카텔란 개인전
+            리움 미술관
+            30000
+
+            조선백자전
+            리움 미술관
+            30000
+
+            한국 실험미술 1960 - 1970
+            국립현대미술관
+            0
+
+            에드워드 호퍼 : 길 위에서
+            서울 시립 미술관
+            1000
+
+            알렉산더 칼더 x 이우환
+            국제갤러리 서울점
+            15000
+    */
+
+    const { createApp } = Vue
+
+    const app = createApp({
+      setup() {
+
+        const exhibitionInfo = [
+          { name: '무라카미 다카시 : 무라카시좀비', place: '부산 시립 미술관', price: 1000},
+          { name: '마우라치오 카텔란 개인전', place: '리움 미술관', price: 30000},
+          { name: '조선백자전', place: '리움 미술관', price: 30000},
+          { name: ' 한국 실험미술 1960 - 1970', place: '국립현대미술관', price: 0},
+          { name: '에드워드 호퍼 : 길 위에서', place: '서울 시립 미술관', price: 1000},
+          { name: ' 알렉산더 칼더 x 이우환', place: '국제갤러리 서울점', price: 15000},
+        ]
+        return {
+          exhibitionInfo,
+        }
+      }
+    })
+
+    app.mount('#app')
+
+  </script>
+</body>
+</html>
